@@ -8,7 +8,7 @@ def add_identifiers(df, create_new = True, new_name = "dataframe"):
     df["unique_id"] = [uuid.uuid4().hex for x in range(len(df))]
 
     if create_new == True:
-        df.to_csv(f"{new_name}.csv")
+        df.to_csv(f"{new_name}.csv", index = False)
     if create_new == False:
         return df
 
